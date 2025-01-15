@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+//     function bubbleSortAsc(arr) {
+//     let n = arr.length;
+//     // Parcurgem array-ul de mai multe ori
+//     for (let i = 0; i < n - 1; i++) {
+//         // Comparam elementele adiacente și le schimbăm dacă nu sunt în ordine
+//         for (let j = 0; j < n - 1 - i; j++) {
+//             if (arr[j] > arr[j + 1]) {
+//                 // Schimbăm elementele
+//                 let temp = arr[j];
+//                 arr[j] = arr[j + 1];
+//                 arr[j + 1] = temp;
+//             }
+//         }
+//     }
+//     return arr;
+// }
+
+// let array = [5, 2, 9, 1, 5, 6, 11, 12, 21, 54];
+// console.log(bubbleSortAsc(array)); 
+
+function bubbleSortDesc(arr) {
+    let n = arr.length;
+    // Parcurgem array-ul de mai multe ori
+    for (let i = 0; i < n - 1; i++) {
+        // Comparam elementele adiacente și le schimbăm dacă nu sunt în ordine
+        for (let j = 0; j < n - 1 - i; j++) {
+            if (arr[j] < arr[j + 1]) {
+                // Schimbăm elementele
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    return arr;
+}
+
+let arrayDesc = [5, 2, 9, 1, 5, 6, 11, 43];
+console.log(bubbleSortDesc(arrayDesc));
+
+
+</script>
+
+</body>
+</html>
