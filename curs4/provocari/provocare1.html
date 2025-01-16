@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. Crearea vectorilor
+      let vectorSiruri = ["abc", "def", "ghi", "jkl"];
+      let vectorNumere = [12, 25, 33, 47, 60];
+
+      // 2. Afișarea elementelor vectorului de siruri folosind "while"
+      console.log("Afișarea vectorului de siruri folosind 'while':");
+      let i = 0;
+      while (i < vectorSiruri.length) {
+        console.log(vectorSiruri[i]);
+        i++;
+      }
+
+      // 3. Afișarea elementelor vectorului de siruri folosind "do...while"
+      console.log("\nAfișarea vectorului de siruri folosind 'do...while':");
+      let j = 0;
+      do {
+        console.log(vectorSiruri[j]);
+        j++;
+      } while (j < vectorSiruri.length);
+
+      // 4. Verificarea dacă un șir dat conține numere divizibile cu 3
+      console.log("\nVerificarea numerelor divizibile cu 3:");
+      vectorNumere.forEach((num) => {
+        if (num % 3 === 0) {
+          console.log(num + " este divizibil cu 3.");
+        }
+      });
+
+      // 5. Afișarea unui vector în sens invers
+      console.log("\nAfișarea vectorului de numere în sens invers:");
+      for (let k = vectorNumere.length - 1; k >= 0; k--) {
+        console.log(vectorNumere[k]);
+      }
+    </script>
+  </body>
+</html>

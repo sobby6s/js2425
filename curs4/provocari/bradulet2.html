@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brăduț de Crăciun</title>
+    <style>
+      body {
+        text-align: auto;
+        font-family: monospace;
+        background-color: #f0f8ff;
+        margin-top: 50px;
+      }
+      pre {
+        font-size: 20px;
+        white-space: pre-wrap; /* Permite împachetarea textului */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Brăduț de Crăciun pe Pagina Web</h1>
+    <pre id="brad"></pre>
+    <!-- Locul unde va fi afișat bradul -->
+
+    <script>
+      function genereazaBrad() {
+        const inaltime = 7; // Înălțimea bradului
+        let brad = "";
+
+        // Creăm partea de sus a bradului
+        for (let i = 0; i < inaltime; i++) {
+          // Creăm o linie de * cu spațiu pe stânga pentru a centra bradul
+          let linie = " ".repeat(inaltime - i - 1) + "*".repeat(2 * i + 1);
+          brad += linie + "\n";
+        }
+
+        // Creăm trunchiul bradului
+        let trunchi = " ".repeat(inaltime - 1) + "*";
+        brad += trunchi + "\n";
+
+        // Afișăm bradul pe pagină
+        document.getElementById("brad").textContent = brad;
+      }
+
+      // Apelăm funcția pentru a genera și afișa bradul pe pagină
+      genereazaBrad();
+    </script>
+  </body>
+</html>

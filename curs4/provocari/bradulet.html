@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brăduț de Crăciun în Consolă</title>
+  </head>
+  <body>
+    <h1>Brăduț de Crăciun în Consolă</h1>
+    <p>Deschide consola pentru a vedea brăduțul!</p>
+
+    <script>
+      function genereazaBrad() {
+        const inaltime = 7; // Inaltimea bradului
+        let brad = "";
+
+        // Creăm partea de sus a bradului
+        for (let i = 0; i < inaltime; i++) {
+          // Creăm o linie de * cu spațiu pe stânga pentru a centra bradul
+          let linie = " ".repeat(inaltime - i - 1) + "*".repeat(2 * i + 1);
+          brad += linie + "\n";
+        }
+
+        // Creăm trunchiul bradului
+        let trunchi = " ".repeat(inaltime - 1) + "*";
+        brad += trunchi + "\n";
+
+        // Afișăm bradul în consolă
+        console.log(brad);
+      }
+
+      // Apelăm funcția pentru a genera și afișa bradul în consolă
+      genereazaBrad();
+    </script>
+  </body>
+</html>

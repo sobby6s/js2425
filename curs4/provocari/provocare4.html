@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function drawTags(tagName, style, content, repetitions = 1) {
+        // Asigură-te că numărul de repetări este cel puțin 1
+        repetitions = Math.max(repetitions, 1);
+
+        // Creează tag-ul și adaugă stilul și conținutul
+        for (let i = 0; i < repetitions; i++) {
+          // Crează un element de tipul tagName
+          let tag = document.createElement(tagName);
+
+          // Aplică stilul elementului
+          tag.style.cssText = style;
+
+          // Adaugă conținutul la tag
+          tag.innerHTML = content;
+
+          // Adaugă tag-ul la body sau la un alt element specificat
+          document.body.appendChild(tag);
+        }
+      }
+
+      // Exemplu de utilizare:
+      drawTags(
+        "div",
+        "border: 1px solid red; background-color: yellow; color: red; margin: 4px; padding: 4px;",
+        "Salut!",
+        2
+      );
+      drawTags(
+        "div",
+        "border: 2px solid blue; background-color: red; color: brown; margin: 10px; padding: 5px;",
+        "Exemplu scris de mine de 5 ori!",
+        5
+      );
+    </script>
+  </body>
+</html>

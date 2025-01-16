@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. Crearea unui array 3x4 folosind constructorul `new Array()`
+      var myArray = new Array(3); // creăm un array de 3 elemente (pentru 3 rânduri)
+      for (let i = 0; i < 3; i++) {
+        myArray[i] = new Array(4); // fiecare rând va conține 4 elemente
+      }
+
+      // 2. Popularea matricei cu valori
+      myArray[0] = [1, 2, 3, 4]; // primul rând
+      myArray[1] = [5, 6, 7, 8]; // al doilea rând
+      myArray[2] = [9, 10, 11, 12]; // al treilea rând
+
+      // 3. Afișarea array-ului în document
+      let output = "<h2>Array-ul 3x4:</h2><table border='1'>";
+      for (let i = 0; i < myArray.length; i++) {
+        output += "<tr>";
+        for (let j = 0; j < myArray[i].length; j++) {
+          output += `<td>${myArray[i][j]}</td>`; // afișăm fiecare element într-o celulă de tabel
+        }
+        output += "</tr>";
+      }
+      output += "</table>";
+      document.body.innerHTML = output; // adăugăm tabelul în corpul documentului
+
+      // 4. Verificarea și afișarea numerelor pare
+      let mesajPere = "<h3>Numere pare din matrice:</h3><ul>";
+      for (let i = 0; i < myArray.length; i++) {
+        for (let j = 0; j < myArray[i].length; j++) {
+          if (myArray[i][j] % 2 === 0) {
+            // verificăm dacă numărul este par
+            mesajPere += `<li>Numărul ${myArray[i][j]} este par.</li>`;
+          }
+        }
+      }
+      mesajPere += "</ul>";
+      document.body.innerHTML += mesajPere; // adăugăm mesajul cu numerele pare în document
+    </script>
+  </body>
+</html>

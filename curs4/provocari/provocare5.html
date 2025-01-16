@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sah(nrlinii, nrcoloane, culoare1 = "white", culoare2 = "black") {
+        // Crearea unui element container pentru tabla de șah
+        let tabla = document.createElement("div");
+        tabla.style.display = "grid"; // Folosim grid pentru a crea tabla de șah
+        tabla.style.gridTemplateRows = `repeat(${nrlinii}, 50px)`; // Setăm numărul de linii și înălțimea fiecărei linii
+        tabla.style.gridTemplateColumns = `repeat(${nrcoloane}, 50px)`; // Setăm numărul de coloane și lățimea fiecărei coloane
+        tabla.style.gap = "0"; // Fără spații între pătrate
+
+        // Popularea tablei cu pătrate
+        for (let i = 0; i < nrlinii; i++) {
+          for (let j = 0; j < nrcoloane; j++) {
+            // Creăm un pătrat
+            let patrat = document.createElement("div");
+
+            // Alternăm culorile în funcție de poziția pe tabelă
+            if ((i + j) % 2 === 0) {
+              patrat.style.backgroundColor = culoare1; // Pătratul de pe pozițiile pare
+            } else {
+              patrat.style.backgroundColor = culoare2; // Pătratul de pe pozițiile impare
+            }
+
+            // Setăm dimensiunea pătratului
+            patrat.style.width = "50px";
+            patrat.style.height = "50px";
+
+            // Adăugăm pătratul la tabelă
+            tabla.appendChild(patrat);
+          }
+        }
+
+        // Adăugăm tabla de șah la document
+        document.body.appendChild(tabla);
+      }
+
+      // Exemplu de utilizare
+      sah(3, 3, "magenta", "green");
+      sah(10, 10, "blue", "red");
+    </script>
+  </body>
+</html>

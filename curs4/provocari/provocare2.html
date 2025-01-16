@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Funcție pentru conversia din Celsius în Fahrenheit
+      function celsiusToFahrenheit(celsius) {
+        return (celsius * 9) / 5 + 32;
+      }
+
+      // Funcție pentru conversia din Fahrenheit în Celsius
+      function fahrenheitToCelsius(fahrenheit) {
+        return ((fahrenheit - 32) * 5) / 9;
+      }
+
+      // Primirea datelor de la utilizator
+      let unitate = prompt(
+        "Introduceti unitatea (C pentru Celsius sau F pentru Fahrenheit): "
+      ).toUpperCase();
+      let temperatura = parseFloat(prompt("Introduceti temperatura: "));
+
+      // Verificarea unității și efectuarea conversiei
+      if (unitate === "C") {
+        // Dacă unitatea este Celsius, convertim în Fahrenheit
+        let temperaturaF = celsiusToFahrenheit(temperatura);
+        console.log(`Temperatura este ${temperaturaF.toFixed(2)} F`);
+      } else if (unitate === "F") {
+        // Dacă unitatea este Fahrenheit, convertim în Celsius
+        let temperaturaC = fahrenheitToCelsius(temperatura);
+        console.log(`Temperatura este ${temperaturaC.toFixed(2)} C`);
+      } else {
+        console.log("Unitate necunoscută. Introduceti C sau F.");
+      }
+    </script>
+  </body>
+</html>
