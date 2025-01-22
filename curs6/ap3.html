@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function produsNou (nume, pret, stoc, dataFabricarii) {
+            const obj = {};
+            obj.nume = nume;
+            obj.pret = pret;
+            obj,stoc = stoc;
+            obj.dataFabricarii = dataFabricarii;
+            obj.afiseaza = function() {
+                console.log (`produsul ${obj.nume} costa ${obj.pret}`)
+            },
+            obj.cumpara = function() {
+                if (this.stoc > 0) {
+                    this.stoc -= 1;
+                    console.log(`produsul ${this.nume} a fost adaugat in cos`)
+                }
+            }
+            return obj;
+        }
+        const paine = produsNou ('paine', 8, 36, '2025-01-22');
+        paine.afiseaza();
+        paine.cumpara();
+        console.log(paine.nume);
+        const produs2 = produsNou('apa minerala Bucovina', 3.5, 100, '2025-01-10');
+        produs2.afiseaza();
+    </script>
+
+</body>
+</html>
