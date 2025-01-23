@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let myArr = [10, 15, 20, 25, 75];
+        document.write(`<h1> Preturile noastre sunt: </h1>`)
+        myArr.forEach(function(val){
+            document.write(`<span> ${val}, </span>`)
+        });
+        let newArr = myArr.map((pret) => (pret * 1.15).toFixed(2));
+        document.write(`<h1> Noile preturi sunt: </h1>`)
+        newArr.forEach(function(val){
+            document.write(`<span> ${val}, </span>`)
+        })
+    </script>
+    
+</body>
+</html>
